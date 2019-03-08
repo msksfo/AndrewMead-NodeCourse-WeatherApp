@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+//* process.env.PORT is for heroku
+const port = process.env.PORT || 3000;
 
 // 1.  when we work with partials, we need to load in the hbs library
 const hbs = require('hbs');
@@ -58,7 +60,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
+        title: 'About',
         name: 'Tia',
     });
 });
@@ -138,8 +140,8 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('server is up on port 3000');
+app.listen(port, () => {
+    console.log('server is up on port' + port);
 });
 
 //* tell nodemon to listen for changes to .js files AND .hbs files
