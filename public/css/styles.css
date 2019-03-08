@@ -77,3 +77,7 @@ button:hover {
 .api-attribution {
     font-style: italic;
 }
+
+.location-result {
+    line-height: 1.5;
+}
