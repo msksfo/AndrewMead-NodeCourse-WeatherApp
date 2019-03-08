@@ -21,12 +21,15 @@ const forecast = (lat, long, callback) => {
             // this is the successful case (we still have to pass in error, but we know it will be undefined ). grab the data we want
             const currently = body.currently;
             const daily = body.daily;
+
             callback(
                 undefined,
                 `${daily.data[0].summary} It is currently ${
                     currently.temperature
                 } degrees out. There is a ${currently.precipProbability *
-                    100}% chance of rain`
+                    100}% chance of rain. Today's high: ${
+                    daily.data[0].temperatureHigh
+                }. Today's low: ${daily.data[0].temperatureLow}.`
             );
         }
     });
