@@ -146,3 +146,5 @@ app.listen(port, () => {
 
 //* tell nodemon to listen for changes to .js files AND .hbs files
 // nodemon src/app.js -e js,hbs
+//* set up a script in package.json "dev": "nodemon src/app.js -e js,hbs"
+//* npm run dev
