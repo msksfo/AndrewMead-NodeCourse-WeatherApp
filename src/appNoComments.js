@@ -41,6 +41,8 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         message: 'How can I help you?',
+        name: 'Tia',
+        title: 'Help Page',
     });
 });
 
@@ -79,7 +81,9 @@ app.get('/weather', (req, res) => {
 // catch all for help 404's
 app.get('/help/*', (req, res) => {
     res.render('404', {
+        title: 'Help Page',
         errorMessage: 'That help article was not found',
+        name: 'Tia',
     });
 });
 
@@ -87,7 +91,9 @@ app.get('/help/*', (req, res) => {
 //* '*' will match everything, therefore is HAS to come last
 app.get('*', (req, res) => {
     res.render('404', {
+        title: 404,
         errorMessage: 'That page was not found',
+        name: 'Tia',
     });
 });
 
